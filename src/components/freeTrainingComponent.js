@@ -3,30 +3,38 @@ import React from 'react';
 export default class freeTrainig extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentChar: 0, showAnswer: false };
-    this.maxCount = 0;
+    this.state = { currentChar: { jap: '', ru: '' }, showAnswer: false };
+    this.maxCount = 1;
   }
 
   componentDidMount() {
     this.nextChar();
   }
-  
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.alphabet !== prevProps.alphabet) this.nextChar();
+  }
+  
   nextChar() {
     let nextNum = this.state.currentChar;
     while (nextNum == this.state.currentChar) {
       nextNum = this.getNewNum();
     }
-    this.setState({ currentChar: nextNum });
+    this.setState({ currentChar: {
+      jap: this.props.alphabet[nextNum][0], 
+      ru: this.props.alphabet[nextNum][1]
+    } });
   }
 
   getNewNum() {
+    // console.log(`this.props.alphabet.length = ${this.props.alphabet.length}`);
+    // console.log(this.props.alphabet);
     let nextNum = 0 + Math.random() * (this.props.alphabet.length);
     nextNum = Math.floor(nextNum);
-    if (this.props.alphabet[this.state.currentChar][2] == this.maxCount) {
-      if (Math.floor(0 + Math.random() * 2)) return this.getNewNum();
+    if (this.props.alphabet[nextNum][0] === this.state.currentChar.jap) {
+      return this.getNewNum();
     }
-    this.maxCount += 1;
+    // console.log(`next number = ${nextNum}`);
     return nextNum;
   }
 
@@ -39,8 +47,8 @@ export default class freeTrainig extends React.Component {
     return (
       <div className='training-container'>
         <div className='task-container'>
-          <div className='japan-char'>{this.props.alphabet[this.state.currentChar][0]}</div>
-          <div className={'sound ' + (this.state.showAnswer ? '' : 'hide')}>{this.props.alphabet[this.state.currentChar][1]}</div>
+          <div className='japan-char'>{this.state.currentChar.jap}</div>
+          <div className={'sound ' + (this.state.showAnswer ? '' : 'hide')}>{this.state.currentChar.ru}</div>
           <button onClick={this.onBtnClick.bind(this)}>{this.state.showAnswer ? '>' : 'show'}</button>
         </div>
       </div>

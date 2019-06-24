@@ -16,8 +16,11 @@ export default class test extends React.Component {
     componentDidMount() {
         this.nextChar();
     }
-    
 
+    componentDidUpdate(prevProps, prevState) {
+      if (this.props.alphabet !== prevProps.alphabet) this.restart();
+    }
+    
     nextChar() {
         if (!this.remainingAlphabet.length) {
             this.setState({currentChar: undefined});
