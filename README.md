@@ -1,1 +1,1 @@
-[Visit on gh-pages](https://Kozjar.githubio.com/Hiragana-Studying)
+[Visit on gh-pages](https://Kozjar.github.io.com/Hiragana-Studying)
