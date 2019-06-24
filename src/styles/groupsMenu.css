@@ -9,7 +9,7 @@
 
 .groups-panel {
     width: 250px;
-    height: 650px;
+    /* height: 650px; */
     background-color: #888;
     border: 4px solid #555;
     display: flex;

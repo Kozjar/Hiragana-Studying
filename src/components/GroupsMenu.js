@@ -41,7 +41,7 @@ export default class freeTrainig extends React.Component {
               </label>
             )
           }
-          <input className="groups-panel__save-btn" type="submit" value="Save"></input>
+          {/* <input className="groups-panel__save-btn" type="submit" value="Save"></input> */}
         </form>
         <div onClick={this.groupsExpand.bind(this)} className="groups-push-btn">Groups</div>
       </div>
