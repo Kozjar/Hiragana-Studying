@@ -63,3 +63,23 @@
     border: 4px solid #555;
     font-size: 1.25em;
 }
+
+.alphabet-selection-btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.alphabet-btn {
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    height: 35px;
+    width: 100px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: rgb(100, 100, 126);
+    border: 3px solid #555;
+    border-bottom: 4px solid #555;
+    font-size: 1.2em;
+    line-height: 35px;
+}

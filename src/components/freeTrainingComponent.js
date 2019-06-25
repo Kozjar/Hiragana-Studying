@@ -3,7 +3,7 @@ import React from 'react';
 export default class freeTrainig extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentChar: { jap: '', ru: '' }, showAnswer: false };
+    this.state = { currentChar: { jap: '', ru: '', hirag: '' }, showAnswer: false };
     this.maxCount = 1;
   }
 
@@ -22,7 +22,8 @@ export default class freeTrainig extends React.Component {
     }
     this.setState({ currentChar: {
       jap: this.props.alphabet[nextNum][0], 
-      ru: this.props.alphabet[nextNum][1]
+      ru: this.props.alphabet[nextNum][1],
+      hirag: this.props.alphabet[nextNum][2],
     } });
   }
 
@@ -48,6 +49,7 @@ export default class freeTrainig extends React.Component {
       <div className='training-container'>
         <div className='task-container'>
           <div className='japan-char'>{this.state.currentChar.jap}</div>
+          {(this.props.alphabetId > 0) && <div className={'sound ' + (this.state.showAnswer ? '' : 'hide')}>{`[ ${this.state.currentChar.hirag} ]`}</div>}
           <div className={'sound ' + (this.state.showAnswer ? '' : 'hide')}>{this.state.currentChar.ru}</div>
           <button onClick={this.onBtnClick.bind(this)}>{this.state.showAnswer ? '>' : 'show'}</button>
         </div>
