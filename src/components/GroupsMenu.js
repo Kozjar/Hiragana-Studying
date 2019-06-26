@@ -41,8 +41,6 @@ export default class freeTrainig extends React.Component {
                 checked={this.state.activeCharSet[i]}
                 onChange={this.changeCharSetState.bind(this, i)} />
                 <div className="group-label">
-                  {/* {`${group[0][0]}(${group[0][1]}) ${group[1][0]}(${group[1][1]}) ${group[2][0]}(${group[2][1]}) 
-                  ${group[3][0]}(${group[3][1]}) ${group[4][0]}(${group[4][1]})`} */}
                   {group.reduce((str, cur) => `${str} ${cur[0]}(${cur[1]})`, '')}
                 </div>
               </label>
