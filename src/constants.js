@@ -72,7 +72,7 @@ export const KANJI = [
   ['こう  ', '(things are) this way', ''],
   ['そう ', '(things are) that way', ''],
   ['大人', 'adult', 'おとな'],
-  ['子供 ', 'child', 'こども']]
+  ['子供 ', 'child', 'こども']],
 
   [['先生', 'teacher', 'せんせい'],
   ['学校', 'school', 'がっこう'],

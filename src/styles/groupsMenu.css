@@ -14,6 +14,8 @@
     border: 4px solid #555;
     display: flex;
     flex-direction: column;
+    max-height: 87.3vh;
+    overflow: auto;
 }
 
 .groups-push-btn {
@@ -48,8 +50,18 @@
 }
 
 .group-checkbox .group-label {
-    width: 150px;
+    width: 180px;
     font-size: 1em;
+    max-height: 80px;
+    overflow: hidden;
+}
+
+.group-label:hover {
+    overflow: auto;
+}
+
+.group-label p {
+    display: inline;
 }
 
 .groups-panel__save-btn {
