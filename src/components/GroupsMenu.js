@@ -31,6 +31,8 @@ export default class freeTrainig extends React.Component {
                 className={`alphabet-btn ${(this.props.alphabetId === 0) ? 'activeTrainType' : ''}`}>Hiragana</div>
             <div onClick={this.props.setActiveAlphabet.bind(this, 1)} 
                 className={`alphabet-btn ${(this.props.alphabetId === 1) ? 'activeTrainType' : ''}`}>Kanji</div>
+            <div onClick={this.props.setActiveAlphabet.bind(this, 2)} 
+                className={`alphabet-btn ${(this.props.alphabetId === 2) ? 'activeTrainType' : ''}`}>Katakana</div>
           </div>
           {
             this.props.ALPHABET.map((group, i) => 

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import FreeTraining from './components/freeTrainingComponent'
 import Test from './components/testComponent'
 import GroupsMenu from './components/GroupsMenu'
-import { ALPHABET, KANJI } from './constants'
+import { ALPHABET, KANJI, KATAKANA } from './constants'
 import './styles/groupsMenu.css'
 import './App.css';
 
@@ -41,6 +41,9 @@ export default class app extends React.Component {
         break;
       case 1:
         this.setState({activeAlphabet: KANJI, activeAlphabetId: 1}, () => this.setActiveCharSet([true, true, true, true, true, true, true, true]));
+        break;
+      case 2:
+        this.setState({activeAlphabet: KATAKANA, activeAlphabetId: 2}, () => this.setActiveCharSet([true, true, true, true, true, true, true, true]));
         break;
       default:
         return;
