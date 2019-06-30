@@ -1,5 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const precss = require('precss');
 
 module.exports = {
   entry: './src/index.js',
@@ -18,8 +21,28 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(scss)$/,
+        use: [{
+          loader: 'style-loader', // inject CSS to page
+        }, {
+          loader: 'css-loader', // translates CSS into CommonJS modules
+        }, {
+          loader: 'postcss-loader', // Run post css actions
+          options: {
+            plugins() {
+              // post css plugins, can be exported to postcss.config.js
+              return [
+                precss,
+                autoprefixer
+              ];
+            }
+          }
+        }, {
+          loader: 'sass-loader' // compiles SASS to CSS
+        }]
+      },
+      {
+        test: /bootstrap\/dist\/js\/umd\//, use: 'imports-loader?jQuery=jquery'
       },
     //   {
     //     test: /\.(gif|png|jpe?g|svg)$/i,
@@ -40,6 +63,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

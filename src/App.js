@@ -3,8 +3,6 @@ import FreeTraining from './components/freeTrainingComponent'
 import Test from './components/testComponent'
 import GroupsMenu from './components/GroupsMenu'
 import { ALPHABET, KANJI, KATAKANA } from './constants'
-import './styles/groupsMenu.css'
-import './App.css';
 
 export default class app extends React.Component {
   constructor(props) {
