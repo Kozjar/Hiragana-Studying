@@ -59,6 +59,12 @@
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #454545;
+    margin: 0;
+    cursor: pointer;
+}
+
+.group-checkbox:hover {
+    background-color: #555555;
 }
 
 .group-checkbox input {
@@ -68,11 +74,15 @@
     margin-right: 15px;
 }
 
-.group-checkbox .group-label {
-    width: 180px;
+.group-label {
+    width: 215px;
     font-size: 1em;
     max-height: 80px;
     overflow: hidden;
+    pre {
+        color: white;
+        margin: 0;
+    }
 }
 
 .group-label:hover {

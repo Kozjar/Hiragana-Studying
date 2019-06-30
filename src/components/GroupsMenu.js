@@ -1,4 +1,5 @@
 import React from 'react';
+import SeparateGroup from './SeparateGroup';
 
 export default class freeTrainig extends React.Component {
   constructor(props) {
@@ -19,6 +20,10 @@ export default class freeTrainig extends React.Component {
     activeCharSet[num] = !activeCharSet[num];
     this.setState({activeCharSet}, () => this.props.setActiveCharSet(this.state.activeCharSet));
     console.log(this.state.activeCharSet);
+  }
+
+  renderHirakata() {
+
   }
 
   render() {
@@ -45,18 +50,10 @@ export default class freeTrainig extends React.Component {
           <div className="card-body">
             {
               this.props.ALPHABET.map((group, i) => 
-                <label key={i} className="group-checkbox">
-                  <input
-                  name="isGoing"
-                  type="checkbox"
-                  checked={this.state.activeCharSet[i]}
-                  onChange={this.changeCharSetState.bind(this, i)} />
-                  <div className="group-label">
-                    {group.map((cur, i) => { return (cur[1].length > 6 && i) ? 
-                                                    <p key={i}><br/>{`${cur[0]}(${cur[1]}) `}</p> : 
-                                                    <p key={i}>{`${cur[0]}(${cur[1]}) `}</p> }, '')}
-                  </div>
-                </label>
+                <SeparateGroup key={i}
+                items={group} 
+                isActive={this.state.activeCharSet[i]}
+                changeCharSetState={this.changeCharSetState.bind(this, i)}/>
               )
             }
           </div>
