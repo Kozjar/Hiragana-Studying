@@ -8,19 +8,19 @@
 }
 
 .groups-panel {
-    width: 290px;
+    width: 320px;
     border-top-right-radius: 0;
-    /* height: 650px; */
     background-color: rgb(104, 104, 104);
     border: 4px solid #454545;
     display: flex;
     flex-direction: column;
-    max-height: 87.3vh;
-    overflow: auto;
+    height: 87.3vh;
+    .nav {
+        margin-left: -5px;
+    }
     .card-header {
-        // background-color: #555;
         background-color: rgb(85, 85, 85);
-        padding-left: 0;
+        padding-left: 5px;
         padding-right: 0;
         .nav-tabs {
             width: 100%;
@@ -34,6 +34,7 @@
     }
     .card-body {
         padding: 0;
+        overflow: auto;
     }
 }
 
@@ -75,18 +76,15 @@
 }
 
 .group-label {
-    width: 215px;
+    width: 240px;
     font-size: 1em;
-    max-height: 80px;
+    max-height: 57px;
     overflow: hidden;
+    user-select: none;
     pre {
         color: white;
         margin: 0;
     }
-}
-
-.group-label:hover {
-    overflow: auto;
 }
 
 .group-label p {

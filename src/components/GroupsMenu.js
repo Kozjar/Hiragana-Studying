@@ -27,7 +27,7 @@ export default class freeTrainig extends React.Component {
   }
 
   render() {
-    const style = { left: this.state.isWindowExpanded ? '0' : '-290px' };
+    const style = { left: this.state.isWindowExpanded ? '0' : '-320px' };
     return (
       <div style={style} className="groups-menu">
         <form className="card text-white mb-3 text-center groups-panel">
