@@ -95,7 +95,7 @@ export default class test extends React.Component {
         answerField = 
         <form className='test-form' onSubmit={this.handleSubmit.bind(this)}>
           <input className='test-answer-input' type='text' value={this.state.answer} onChange={this.handleChange.bind(this)}></input>
-          <input className='submit-test-answer-btn' type='submit' value={this.state.isGetAnswer ? 'Next' : 'Check'}></input>
+          <input className='show-btn' type='submit' value={this.state.isGetAnswer ? 'Next' : 'Check'}></input>
         </form>
       }
 

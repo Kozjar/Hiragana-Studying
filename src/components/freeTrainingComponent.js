@@ -51,7 +51,7 @@ export default class freeTrainig extends React.Component {
           <div className='japan-char'>{this.state.currentChar.jap}</div>
           {(this.props.alphabetId === 1) && <div className={'sound ' + (this.state.showAnswer ? '' : 'hide')}>{`[ ${this.state.currentChar.hirag} ]`}</div>}
           <div className={'sound ' + (this.state.showAnswer ? '' : 'hide')}>{this.state.currentChar.ru}</div>
-          <button onClick={this.onBtnClick.bind(this)}>{this.state.showAnswer ? '>' : 'show'}</button>
+          <button className="show-btn" onClick={this.onBtnClick.bind(this)}>{this.state.showAnswer ? '>' : 'show'}</button>
         </div>
       </div>
     )
